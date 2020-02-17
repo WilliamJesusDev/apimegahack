@@ -20,9 +20,11 @@ routes.post("/session", SessionController.session);
 // Private Route
 routes.get("/private/init/list", isAdmin, InitController.index);
 routes.post("/private/init/categories", isAdmin, InitController.createCategory);
-routes.post("/private/init/playlists", isAdmin, InitController.createPlaylist);
+routes.post("/private/init/playlist", isAdmin, InitController.createPlaylist);
+routes.post("/private/init/playlists", isAdmin, InitController.createPlaylists);
 routes.delete("/users/:_id", isAdmin, UserController.delete);
 
+// Middleware
 routes.all("*", isAuth);
 
 // Users

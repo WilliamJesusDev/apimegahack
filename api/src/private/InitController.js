@@ -81,13 +81,16 @@ module.exports = {
 
     return res.json(categorie);
   },
-  async createPlaylist(req, res) {
+  async createPlaylists(req, res) {
+    const { channelNumber = "", categorie = 0 } = req.query;
+
     await api
       .get("/playlists/", {
         params: {
           key: process.env.API_KEY,
           part: "id,snippet",
-          channelId: "UCEPRQVF6hxGGM9gi1ELaWHg",
+          channelId:
+            channelNumber !== "" ? channelNumber : "UCEPRQVF6hxGGM9gi1ELaWHg",
           maxResults: "50"
         }
       })
@@ -98,18 +101,32 @@ module.exports = {
             snippet: { publishedAt, title, description, thumbnails }
           } = item;
 
-          await Playlist.findOneAndUpdate(
-            { _id },
-            {
-              _id,
-              publishedAt,
-              title,
-              description,
-              thumbnails,
-              categorie: 0
-            },
-            { upsert: true, new: true }
-          );
+          if (categorie !== 0) {
+            await Playlist.findOneAndUpdate(
+              { _id },
+              {
+                _id,
+                publishedAt,
+                title,
+                description,
+                thumbnails,
+                categorie
+              },
+              { upsert: true, new: true }
+            );
+          } else {
+            await Playlist.findOneAndUpdate(
+              { _id },
+              {
+                _id,
+                publishedAt,
+                title,
+                description,
+                thumbnails
+              },
+              { upsert: true, new: true }
+            );
+          }
         });
       });
     const playlists = await Playlist.find();
@@ -118,10 +135,62 @@ module.exports = {
 
     return res.json(playlists);
   },
+  async createPlaylist(req, res) {
+    const { playlistNumber = "", categorie = 0 } = req.query;
+
+    await api
+      .get("/playlists/", {
+        params: {
+          key: process.env.API_KEY,
+          part: "id,snippet",
+          id: playlistNumber !== "" ? playlistNumber : "",
+          maxResults: "50"
+        }
+      })
+      .then(response => {
+        response.data.items.map(async function(item) {
+          const {
+            id: _id,
+            snippet: { publishedAt, title, description, thumbnails }
+          } = item;
+
+          if (categorie !== 0) {
+            await Playlist.findOneAndUpdate(
+              { _id },
+              {
+                _id,
+                publishedAt,
+                title,
+                description,
+                thumbnails,
+                categorie
+              },
+              { upsert: true, new: true }
+            );
+          } else {
+            await Playlist.findOneAndUpdate(
+              { _id },
+              {
+                _id,
+                publishedAt,
+                title,
+                description,
+                thumbnails
+              },
+              { upsert: true, new: true }
+            );
+          }
+        });
+      });
+    const playlist = await Playlist.find({ _id: playlistNumber });
+
+    addMovies(playlist);
+
+    return res.json(playlist);
+  },
   async index(req, res) {
     const response = await Channel.find()
       .sort("_id")
-      .select("_id title categories")
       .populate({
         path: "categories",
         select: "_id title playlists",
@@ -139,7 +208,7 @@ module.exports = {
       channel => channel.categories.length > 0
     );
 
-    const channels = channelsResponse.map(channel =>
+    const channels = channelsResponse.filter(channel =>
       channel.categories.filter(categorie => categorie.playlists.length > 0)
     );
 
