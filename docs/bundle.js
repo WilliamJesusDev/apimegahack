@@ -6729,11 +6729,11 @@ var app = (function() {
     }
     generate(e) {
       switch (e) {
-        case "curl":
-          this.code = Te;
-          break;
         case "javascript":
           this.code = Oe;
+          break;
+        case "curl":
+          this.code = Te;
           break;
         case "python":
           this.code = je;
@@ -6828,7 +6828,7 @@ var app = (function() {
         this.req.parameters.forEach(t => {
           e.push({ name: t.name, value: t.value, description: t.description });
         }),
-        { title: "Parameters", rows: e }
+        { title: "Query Parameters", rows: e }
       );
     }
     headers() {
@@ -10182,13 +10182,13 @@ var app = (function() {
         tables: !0
       }),
       a = [
-        { value: "curl", label: "cURL" },
         { value: "javascript", label: "JavaScript (fetch)" },
-        { value: "python", label: "Python (requests)" },
         { value: "node", label: "Node.js (node-request)" },
-        { value: "ruby", label: "Ruby" },
         { value: "php", label: "PHP" },
-        { value: "golang", label: "Go" }
+        { value: "curl", label: "cURL" },
+        { value: "ruby", label: "Ruby" },
+        { value: "golang", label: "Go" },
+        { value: "python", label: "Python (requests)" }
       ];
     let i,
       o,
