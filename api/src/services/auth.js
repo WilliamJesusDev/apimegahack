@@ -20,7 +20,9 @@ module.exports = {
       if (decoded) {
         return next();
       } else {
-        return res.status(401).send("Unauthorized");
+        return res
+          .status(401)
+          .json({ message: "Auth is required for this path" });
       }
     });
   },
@@ -31,7 +33,9 @@ module.exports = {
       if (decoded.email === email) {
         return next();
       } else {
-        return res.status(401).send("Unauthorized");
+        return res
+          .status(401)
+          .json({ message: "Auth Admin is required for this path" });
       }
     });
   }

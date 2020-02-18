@@ -10,13 +10,16 @@ const ChannelSchema = new mongoose.Schema(
         type: Number,
         ref: "categorie"
       }
-    ]
+    ],
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user"
+    }
   },
   {
     id: false,
     versionKey: false,
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true }
+    toJSON: { virtuals: true }
   }
 );
 

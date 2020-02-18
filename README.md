@@ -13,5 +13,4 @@ $ yarn dev
 ### Insomnia
 
 Segue um arquivo importável do Insomnia que pode ser usado para facilitar os testes de rotas.
-[InsomniaREST](https://insomnia.rest/download/)
-Localização do Arquivo [utils/Insomnia](./utils/Insomnia)
+[InsomniaREST](https://insomnia.rest/download/) Localização do Arquivo [utils/Insomnia](./utils/Insomnia)

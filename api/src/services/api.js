@@ -1,7 +1,7 @@
-const axios = require('axios')
+const axios = require("axios");
 
 const api = axios.create({
-  baseURL: 'https://www.googleapis.com/youtube/v3/'
-})
+  baseURL: "https://www.googleapis.com/youtube/v3/"
+});
 
-module.exports = api
+module.exports = api;

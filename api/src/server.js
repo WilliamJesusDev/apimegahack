@@ -1,25 +1,25 @@
-const express = require('express')
-const routes = require('./routes')
-const mongoose = require('mongoose')
+const express = require("express");
+const mongoose = require("mongoose");
 
-require('dotenv').config()
+const routerAdmin = require("./routes/routerAdmin");
+const routerBasic = require("./routes/routerBasic");
 
-const app = express()
+require("dotenv").config();
 
-mongoose.connect(
-  process.env.MONGODB_URL,
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-  }
-);
+const app = express();
 
-app.use(express.json())
-app.use(routes)
+mongoose.connect(process.env.MONGODB_URL, {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+});
+
+app.use(express.json());
+
+app.use("/private", routerAdmin);
+app.use("/", routerBasic);
 
 app.listen(process.env.PORT || 3333, () => {
-  console.log(`[running] started on http://localhost:${process.env.PORT}\n`)
-})
-
+  console.log(`[running] started on http://localhost:${process.env.PORT}\n`);
+});

@@ -1,16 +1,16 @@
-const Movie = require('../models/Movie')
+const Movie = require("../models/Movie");
 
 module.exports = {
   async index(req, res) {
-    const movies = await Movie.find()
+    const movies = await Movie.find();
 
-    return res.json(movies)
+    return res.json(movies);
   },
   async show(req, res) {
-    const { _id } = req.params
-    const movie = await Movie.findOne({ _id })
+    const { _id } = req.params;
+    const movie = await Movie.findOne({ _id });
 
-    return res.json(movie)
+    return res.json(movie);
   },
   async create(req, res) {
     const {
@@ -18,10 +18,10 @@ module.exports = {
       videoId,
       title,
       publishedAt = new Date(),
-      description = '',
+      description = "",
       thumbnails = {},
-      playlist = ''
-    } = req.body
+      playlist = ""
+    } = req.body;
 
     const movie = await Movie.findOneAndUpdate(
       { _id },
@@ -35,20 +35,20 @@ module.exports = {
         videoId
       },
       { upsert: true, new: true }
-    )
+    );
 
-    return res.json(movie)
+    return res.json(movie);
   },
   async update(req, res) {
-    const { _id } = req.params
+    const { _id } = req.params;
     const {
       videoId,
       title,
       publishedAt = new Date(),
-      description = '',
+      description = "",
       thumbnails = {},
-      playlist = ''
-    } = req.body
+      playlist = ""
+    } = req.body;
 
     const movie = await Movie.findOneAndUpdate(
       { _id },
@@ -62,14 +62,16 @@ module.exports = {
         videoId
       },
       { upsert: true, new: true }
-    )
+    );
 
-    return res.json(movie)
+    return res.json(movie);
   },
   async delete(req, res) {
-    const { _id } = req.params
-    await Movie.deleteOne({ _id })
+    const { _id } = req.params;
+    await Movie.deleteOne({ _id });
 
-    return res.json({ message: `The Movie with id ${_id} has been successfully deleted` })
-  },
-}
+    return res.json({
+      message: `The Movie with id ${_id} has been successfully deleted`
+    });
+  }
+};
