@@ -1,0 +1,95 @@
+body {
+  background-color: #1f1f1f;
+  background-size: cover;
+  display: flex;
+}
+
+header .navbar {
+  margin-left: 50px;
+  font-weight: 700;
+}
+
+header .navbar .nome-globo {
+  font-size: 25px;
+}
+
+header .navbar .dropdown-menu {
+  background-color: #242424;
+  color: #888;
+}
+
+header .navbar .dropdown-menu .dropdown-item {
+  color: #888;
+}
+
+.navbar-inner {
+  background: #ccc;
+}
+
+header .navbar .navbar-brand .img-user {
+  width: 50px;
+}
+header .navbar .navbar-brand .icone-notificacao {
+  margin: 0 20px 0 20px;
+}
+
+/*CONTEUDO DO INICIO*/
+main {
+  align-content: center;
+}
+main .banner-principal {
+  background: rgba(255, 255, 255, 0.6);
+  width: 90%;
+}
+main .banner-principal img {
+  width: 100%;
+}
+main .acesso-meu-canal {
+  position: relative;
+  top: -300px;
+  width: 100%;
+}
+main .acesso-meu-canal p {
+  color: #fff;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-left: 30%;
+}
+main .acesso-meu-canal .button-posicao {
+  margin-left: 40%;
+  margin-top: 1%;
+}
+main .acesso-meu-canal button {
+  margin-right: 10px;
+  padding: 13px;
+}
+
+main .slide1 {
+  float: right;
+  margin-top: -100px;
+}
+main .slide2 {
+  float: right;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+main .bbb {
+  margin-top: 200px;
+}
+
+.rodape {
+  background-color: #000;
+  color: #888;
+  font-size: 12px;
+  height: 50px;
+  max-width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+.rodape p {
+  margin-left: 10%;
+}
