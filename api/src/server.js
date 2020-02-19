@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const routerAdmin = require("./routes/routerAdmin");
 const routerBasic = require("./routes/routerBasic");
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 });
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/private", routerAdmin);
 app.use("/", routerBasic);
