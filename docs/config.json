@@ -1,8 +1,7 @@
 {
-  "title" : "API Globoplay",
-  "version" : "1.0.0",
-  "host" : "api-globoplay.herokuapp.com",
-  "basePath" : "api-globoplay.herokuapp.com",
-  "schemes" : "GET POST PUT DELETE",
-  "description" : "API description"
+  "title": "API Globoplay",
+  "version": "1.0.0",
+  "host": "api-globoplay.herokuapp.com",
+  "schemes": "https",
+  "description": "API description"
 }

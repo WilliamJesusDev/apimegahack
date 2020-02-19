@@ -1,29 +1,31 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-02-18T02:21:59.993Z",
-  "__export_source": "insomnia.desktop.app:v7.1.0",
+  "__export_date": "2020-02-19T14:44:36.786Z",
+  "__export_source": "insomnia.desktop.app:v7.1.1",
   "resources": [
     {
-      "_id": "req_4dbf06c58302443c8b7dde927e03187c",
+      "_id": "req_1a8dd8aca0e44a8fa526b7005d796658",
       "authentication": {},
-      "body": {},
-      "created": 1581907978400,
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"user@email.com\",\n\t\"password\": \"megahack\"\n}"
+      },
+      "created": 1581902770814,
       "description": "",
-      "headers": [],
-      "isPrivate": false,
-      "metaSortKey": -1579000571568.5,
-      "method": "GET",
-      "modified": 1581939007386,
-      "name": "ListAll",
-      "parameters": [
+      "headers": [
         {
-          "description": "",
-          "id": "pair_97b6965779054ca9bec03a7be96d0494",
-          "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "id": "pair_803bcd035e1948dc847e1059455a4566",
+          "name": "Content-Type",
+          "value": "application/json"
         }
       ],
+      "isPrivate": false,
+      "metaSortKey": -1579000571668.5,
+      "method": "POST",
+      "modified": 1582123428493,
+      "name": "SignIn",
+      "parameters": [],
       "parentId": "fld_684fa0d5c5eb4f14a2af1b89a6d4e1ca",
       "settingDisableRenderRequestBody": false,
       "settingEncodeUrl": true,
@@ -31,7 +33,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/users",
+      "url": "{{ API_URL }}/session",
       "_type": "request"
     },
     {
@@ -56,36 +58,6 @@
       "_type": "workspace"
     },
     {
-      "_id": "req_6eb1ea8b55af4f1a8d57f20ea9238953",
-      "authentication": {},
-      "body": {},
-      "created": 1581983101373,
-      "description": "",
-      "headers": [],
-      "isPrivate": false,
-      "metaSortKey": -1579000571549.75,
-      "method": "GET",
-      "modified": 1581983104408,
-      "name": "ListOne",
-      "parameters": [
-        {
-          "description": "",
-          "id": "pair_97b6965779054ca9bec03a7be96d0494",
-          "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
-        }
-      ],
-      "parentId": "fld_684fa0d5c5eb4f14a2af1b89a6d4e1ca",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingFollowRedirects": "global",
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "{{ API_URL }}/users/5e4a7fd897f31730f05d9680",
-      "_type": "request"
-    },
-    {
       "_id": "req_9b692a9c498842fea153e531d34b60f4",
       "authentication": {},
       "body": {
@@ -102,10 +74,10 @@
         }
       ],
       "isPrivate": false,
-      "metaSortKey": -1579000571518.5,
+      "metaSortKey": -1579000571618.5,
       "method": "POST",
-      "modified": 1581986023771,
-      "name": "Create",
+      "modified": 1582122835456,
+      "name": "SignUp",
       "parameters": [],
       "parentId": "fld_684fa0d5c5eb4f14a2af1b89a6d4e1ca",
       "settingDisableRenderRequestBody": false,
@@ -118,27 +90,25 @@
       "_type": "request"
     },
     {
-      "_id": "req_1a8dd8aca0e44a8fa526b7005d796658",
+      "_id": "req_6eb1ea8b55af4f1a8d57f20ea9238953",
       "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\n\t\"email\": \"user@email.com\",\n\t\"password\": \"megahack\"\n}"
-      },
-      "created": 1581902770814,
+      "body": {},
+      "created": 1581983101373,
       "description": "",
-      "headers": [
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1579000571581,
+      "method": "GET",
+      "modified": 1582122849748,
+      "name": "GetOne",
+      "parameters": [
         {
-          "id": "pair_803bcd035e1948dc847e1059455a4566",
-          "name": "Content-Type",
-          "value": "application/json"
+          "description": "",
+          "id": "pair_97b6965779054ca9bec03a7be96d0494",
+          "name": "x_jwt_token",
+          "value": "{{ USER_KEY }}"
         }
       ],
-      "isPrivate": false,
-      "metaSortKey": -1579000571515.375,
-      "method": "POST",
-      "modified": 1581986010674,
-      "name": "Session",
-      "parameters": [],
       "parentId": "fld_684fa0d5c5eb4f14a2af1b89a6d4e1ca",
       "settingDisableRenderRequestBody": false,
       "settingEncodeUrl": true,
@@ -146,27 +116,57 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/session",
+      "url": "{{ API_URL }}/users/5e4a7fd897f31730f05d9680",
       "_type": "request"
     },
     {
-      "_id": "req_a8a39e03873045839caa10bc0acbcc2b",
+      "_id": "req_4dbf06c58302443c8b7dde927e03187c",
       "authentication": {},
       "body": {},
-      "created": 1581985687481,
+      "created": 1581907978400,
       "description": "",
       "headers": [],
       "isPrivate": false,
       "metaSortKey": -1579000571568.5,
       "method": "GET",
-      "modified": 1581985697626,
-      "name": "ListAll",
+      "modified": 1582122855456,
+      "name": "GetAll",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
+        }
+      ],
+      "parentId": "fld_684fa0d5c5eb4f14a2af1b89a6d4e1ca",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ API_URL }}/users",
+      "_type": "request"
+    },
+    {
+      "_id": "req_39918721f804444c8c5733c7dd19f06e",
+      "authentication": {},
+      "body": {},
+      "created": 1581985687490,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1579000571718.5,
+      "method": "GET",
+      "modified": 1582123282902,
+      "name": "GetOne",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_97b6965779054ca9bec03a7be96d0494",
+          "name": "x_jwt_token",
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_6aca8b9f1eae40c38eb4c2a8da71d956",
@@ -176,7 +176,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/profile",
+      "url": "{{ API_URL }}/profile/5e4a7fd897f31730f05d9680",
       "_type": "request"
     },
     {
@@ -192,23 +192,23 @@
       "_type": "request_group"
     },
     {
-      "_id": "req_39918721f804444c8c5733c7dd19f06e",
+      "_id": "req_a8a39e03873045839caa10bc0acbcc2b",
       "authentication": {},
       "body": {},
-      "created": 1581985687490,
+      "created": 1581985687481,
       "description": "",
       "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1579000571549.75,
+      "metaSortKey": -1579000571668.5,
       "method": "GET",
-      "modified": 1581985706737,
-      "name": "ListOne",
+      "modified": 1582123278798,
+      "name": "GetAll",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_6aca8b9f1eae40c38eb4c2a8da71d956",
@@ -218,7 +218,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/profile/5e4a7fd897f31730f05d9680",
+      "url": "{{ API_URL }}/profile",
       "_type": "request"
     },
     {
@@ -240,14 +240,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571518.5,
       "method": "PUT",
-      "modified": 1581985920436,
-      "name": "Update",
+      "modified": 1582122974964,
+      "name": "CompleteProfile",
       "parameters": [
         {
           "description": "",
           "id": "pair_084bb56f6eac4db8a635025672cd6d58",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_6aca8b9f1eae40c38eb4c2a8da71d956",
@@ -279,14 +279,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571515.375,
       "method": "PUT",
-      "modified": 1581986003473,
-      "name": "UpdatePass",
+      "modified": 1582122991024,
+      "name": "ResetPassword",
       "parameters": [
         {
           "description": "",
           "id": "pair_ff156c1fb2b84878a8b91f250ce971b8",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_6aca8b9f1eae40c38eb4c2a8da71d956",
@@ -297,6 +297,45 @@
       "settingSendCookies": true,
       "settingStoreCookies": true,
       "url": "{{ API_URL }}/profile/5e4a7fd897f31730f05d9680/pass",
+      "_type": "request"
+    },
+    {
+      "_id": "req_459196acbcf145b1828e05bf4bea8502",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"playlists\": [\"PLCG86DHec6YG0SqgYYy9MGvSPF5uhWWlh\"]\n}"
+      },
+      "created": 1581986146686,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_803bcd035e1948dc847e1059455a4566",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1579000571514.5938,
+      "method": "POST",
+      "modified": 1582123038560,
+      "name": "AdjustCollections",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_ff156c1fb2b84878a8b91f250ce971b8",
+          "name": "x_jwt_token",
+          "value": "{{ USER_KEY }}"
+        }
+      ],
+      "parentId": "fld_6aca8b9f1eae40c38eb4c2a8da71d956",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ API_URL }}/profile/5e4a7fd897f31730f05d9680/playlists",
       "_type": "request"
     },
     {
@@ -318,14 +357,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571513.8125,
       "method": "POST",
-      "modified": 1581986124378,
-      "name": "AddCategories",
+      "modified": 1582123051003,
+      "name": "AdjustPreferences",
       "parameters": [
         {
           "description": "",
           "id": "pair_ff156c1fb2b84878a8b91f250ce971b8",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_6aca8b9f1eae40c38eb4c2a8da71d956",
@@ -336,45 +375,6 @@
       "settingSendCookies": true,
       "settingStoreCookies": true,
       "url": "{{ API_URL }}/profile/5e4a7fd897f31730f05d9680/categories",
-      "_type": "request"
-    },
-    {
-      "_id": "req_459196acbcf145b1828e05bf4bea8502",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\n\t\"playlists\": [\"PLCG86DHec6YG0SqgYYy9MGvSPF5uhWWlh\"]\n}"
-      },
-      "created": 1581986146686,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_803bcd035e1948dc847e1059455a4566",
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1579000571513.0312,
-      "method": "POST",
-      "modified": 1581986234488,
-      "name": "AddPlaylists",
-      "parameters": [
-        {
-          "description": "",
-          "id": "pair_ff156c1fb2b84878a8b91f250ce971b8",
-          "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
-        }
-      ],
-      "parentId": "fld_6aca8b9f1eae40c38eb4c2a8da71d956",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingFollowRedirects": "global",
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "{{ API_URL }}/profile/5e4a7fd897f31730f05d9680/playlists",
       "_type": "request"
     },
     {
@@ -396,14 +396,14 @@
       "isPrivate": false,
       "metaSortKey": -1581944602033,
       "method": "POST",
-      "modified": 1581968532262,
-      "name": "Create",
+      "modified": 1582123103532,
+      "name": "CreateRoot",
       "parameters": [
         {
           "description": "",
           "id": "pair_fc6676f11e83485d952ab4e9dcf6e305",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_d1e39ffcc2ea4a538c4d3bb3e78c3743",
@@ -413,7 +413,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL  }}/channels",
+      "url": "{{ API_URL }}/channels",
       "_type": "request"
     },
     {
@@ -447,14 +447,14 @@
       "isPrivate": false,
       "metaSortKey": -1581912562919.5,
       "method": "POST",
-      "modified": 1581983222359,
-      "name": "CreateByUser",
+      "modified": 1582123130153,
+      "name": "CreateUserChannel",
       "parameters": [
         {
           "description": "",
           "id": "pair_fc6676f11e83485d952ab4e9dcf6e305",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_d1e39ffcc2ea4a538c4d3bb3e78c3743",
@@ -464,37 +464,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL  }}/channels/5e4a7fd897f31730f05d9680",
-      "_type": "request"
-    },
-    {
-      "_id": "req_d0479d8ea162427d85eabc901a7de90a",
-      "authentication": {},
-      "body": {},
-      "created": 1581948469105,
-      "description": "",
-      "headers": [],
-      "isPrivate": false,
-      "metaSortKey": -1579000571531,
-      "method": "GET",
-      "modified": 1581948716653,
-      "name": "ListAll",
-      "parameters": [
-        {
-          "description": "",
-          "id": "pair_97b6965779054ca9bec03a7be96d0494",
-          "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
-        }
-      ],
-      "parentId": "fld_d1e39ffcc2ea4a538c4d3bb3e78c3743",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingFollowRedirects": "global",
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "{{ API_URL }}/channels",
+      "url": "{{ API_URL }}/channels/5e4a7fd897f31730f05d9680",
       "_type": "request"
     },
     {
@@ -505,16 +475,16 @@
       "description": "",
       "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1579000571530.2188,
+      "metaSortKey": -1579000571530.6094,
       "method": "GET",
-      "modified": 1581986984583,
-      "name": "ListOne",
+      "modified": 1582123267296,
+      "name": "GetOne",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_d1e39ffcc2ea4a538c4d3bb3e78c3743",
@@ -528,6 +498,36 @@
       "_type": "request"
     },
     {
+      "_id": "req_d0479d8ea162427d85eabc901a7de90a",
+      "authentication": {},
+      "body": {},
+      "created": 1581948469105,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1579000571530.0234,
+      "method": "GET",
+      "modified": 1582123289272,
+      "name": "GetAll",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_97b6965779054ca9bec03a7be96d0494",
+          "name": "x_jwt_token",
+          "value": "{{ USER_KEY }}"
+        }
+      ],
+      "parentId": "fld_d1e39ffcc2ea4a538c4d3bb3e78c3743",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ API_URL }}/channels",
+      "_type": "request"
+    },
+    {
       "_id": "req_7b42874990d14979ad8db79c633219cc",
       "authentication": {},
       "body": {},
@@ -537,14 +537,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571529.4375,
       "method": "GET",
-      "modified": 1581987637944,
-      "name": "ListAllWithCategories",
+      "modified": 1582123199673,
+      "name": "GetJustWithCategories",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_d1e39ffcc2ea4a538c4d3bb3e78c3743",
@@ -567,14 +567,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571528.6562,
       "method": "GET",
-      "modified": 1581961504067,
-      "name": "ListAllWithCategoriesAndPlaylists",
+      "modified": 1582123217833,
+      "name": "GetJustWithCategoriesAndPlaylists",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_d1e39ffcc2ea4a538c4d3bb3e78c3743",
@@ -588,23 +588,32 @@
       "_type": "request"
     },
     {
-      "_id": "req_dd1afafc0fb44300b2f50467c0038b44",
+      "_id": "req_757f8a7990d04e64b71fb5b5b404597e",
       "authentication": {},
-      "body": {},
-      "created": 1581813641217,
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"_id\": 3,\n\t\"title\": \"Novelas\"\n}"
+      },
+      "created": 1581944602033,
       "description": "",
-      "headers": [],
+      "headers": [
+        {
+          "id": "pair_ff233dc353f94b87816e968c39884af1",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
       "isPrivate": false,
-      "metaSortKey": -1579000571531,
-      "method": "GET",
-      "modified": 1581948694683,
-      "name": "ListAll",
+      "metaSortKey": -1581944602033,
+      "method": "POST",
+      "modified": 1582123231288,
+      "name": "CreateRoot",
       "parameters": [
         {
           "description": "",
-          "id": "pair_97b6965779054ca9bec03a7be96d0494",
+          "id": "pair_fc6676f11e83485d952ab4e9dcf6e305",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_fc50965d21e947828c6e823e776f415a",
@@ -630,36 +639,6 @@
       "_type": "request_group"
     },
     {
-      "_id": "req_a0e596a9a3d44263ad0a58b572e3ceaa",
-      "authentication": {},
-      "body": {},
-      "created": 1581947968684,
-      "description": "",
-      "headers": [],
-      "isPrivate": false,
-      "metaSortKey": -1579000571529.4375,
-      "method": "GET",
-      "modified": 1581948699884,
-      "name": "ListAllWithPlaylists",
-      "parameters": [
-        {
-          "description": "",
-          "id": "pair_97b6965779054ca9bec03a7be96d0494",
-          "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
-        }
-      ],
-      "parentId": "fld_fc50965d21e947828c6e823e776f415a",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingFollowRedirects": "global",
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "{{ API_URL }}/categories/playlists",
-      "_type": "request"
-    },
-    {
       "_id": "req_6c6d0c33c55540f88b6d1660762395c9",
       "authentication": {},
       "body": {},
@@ -667,16 +646,16 @@
       "description": "",
       "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1579000571527.875,
+      "metaSortKey": -1579000571530.2188,
       "method": "GET",
-      "modified": 1581968304017,
-      "name": "ListOne",
+      "modified": 1582123271925,
+      "name": "GetOne",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_fc50965d21e947828c6e823e776f415a",
@@ -690,23 +669,83 @@
       "_type": "request"
     },
     {
-      "_id": "req_a851a88fdc98463e97fd25acfaaf8832",
+      "_id": "req_dd1afafc0fb44300b2f50467c0038b44",
       "authentication": {},
       "body": {},
-      "created": 1581908012013,
+      "created": 1581813641217,
       "description": "",
       "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1579000571581,
+      "metaSortKey": -1579000571529.8281,
       "method": "GET",
-      "modified": 1581939035933,
-      "name": "ListAll",
+      "modified": 1582123292559,
+      "name": "GetAll",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
+        }
+      ],
+      "parentId": "fld_fc50965d21e947828c6e823e776f415a",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ API_URL }}/categories",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a0e596a9a3d44263ad0a58b572e3ceaa",
+      "authentication": {},
+      "body": {},
+      "created": 1581947968684,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1579000571529.4375,
+      "method": "GET",
+      "modified": 1582123250154,
+      "name": "GetJustWithPlaylists",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_97b6965779054ca9bec03a7be96d0494",
+          "name": "x_jwt_token",
+          "value": "{{ USER_KEY }}"
+        }
+      ],
+      "parentId": "fld_fc50965d21e947828c6e823e776f415a",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ API_URL }}/categories/playlists",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b2d8abccf15e4b87a144f0de005580e5",
+      "authentication": {},
+      "body": {},
+      "created": 1581941588486,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1579000571574.75,
+      "method": "GET",
+      "modified": 1582123305308,
+      "name": "GetOne",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_97b6965779054ca9bec03a7be96d0494",
+          "name": "x_jwt_token",
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_51806c817cff4839814153e44ce00e49",
@@ -716,7 +755,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/playlists",
+      "url": "{{ API_URL }}/playlists/PLhTLWUgL7Bv_3BJmJb2wDoQ1_U41FdqI-",
       "_type": "request"
     },
     {
@@ -732,23 +771,23 @@
       "_type": "request_group"
     },
     {
-      "_id": "req_b2d8abccf15e4b87a144f0de005580e5",
+      "_id": "req_a851a88fdc98463e97fd25acfaaf8832",
       "authentication": {},
       "body": {},
-      "created": 1581941588486,
+      "created": 1581908012013,
       "description": "",
       "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1579000571574.75,
+      "metaSortKey": -1579000571524.75,
       "method": "GET",
-      "modified": 1581968428794,
-      "name": "ListOne",
+      "modified": 1582123310353,
+      "name": "GetAll",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_51806c817cff4839814153e44ce00e49",
@@ -758,27 +797,27 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/playlists/PLhTLWUgL7Bv_3BJmJb2wDoQ1_U41FdqI-",
+      "url": "{{ API_URL }}/playlists",
       "_type": "request"
     },
     {
-      "_id": "req_055abe51c2a44681a36c7d200bc4ae03",
+      "_id": "req_86940912c0e54db1b1679063ef17bb16",
       "authentication": {},
       "body": {},
-      "created": 1581907799727,
+      "created": 1581986282964,
       "description": "",
       "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1579000571581,
+      "metaSortKey": -1579000571631,
       "method": "GET",
-      "modified": 1581939028936,
-      "name": "ListAll",
+      "modified": 1582123331531,
+      "name": "GetOne",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_c8b57e6a6831444cb6d19e1ca9f3b471",
@@ -788,7 +827,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/movies",
+      "url": "{{ API_URL }}/movies/UExDRzg2REhlYzZZSENYdVRkbVBSNHdDX1hmSlZsZEZhWS41NkI0NEY2RDEwNTU3Q0M2",
       "_type": "request"
     },
     {
@@ -804,23 +843,23 @@
       "_type": "request_group"
     },
     {
-      "_id": "req_86940912c0e54db1b1679063ef17bb16",
+      "_id": "req_055abe51c2a44681a36c7d200bc4ae03",
       "authentication": {},
       "body": {},
-      "created": 1581986282964,
+      "created": 1581907799727,
       "description": "",
       "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1579000571577.875,
+      "metaSortKey": -1579000571581,
       "method": "GET",
-      "modified": 1581986304630,
-      "name": "ListOne",
+      "modified": 1582123319128,
+      "name": "GetAll",
       "parameters": [
         {
           "description": "",
           "id": "pair_97b6965779054ca9bec03a7be96d0494",
           "name": "x_jwt_token",
-          "value": "{{ USER_KEY  }}"
+          "value": "{{ USER_KEY }}"
         }
       ],
       "parentId": "fld_c8b57e6a6831444cb6d19e1ca9f3b471",
@@ -830,7 +869,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ API_URL }}/movies/UExDRzg2REhlYzZZSENYdVRkbVBSNHdDX1hmSlZsZEZhWS41NkI0NEY2RDEwNTU3Q0M2",
+      "url": "{{ API_URL }}/movies",
       "_type": "request"
     },
     {
@@ -843,14 +882,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571518.5,
       "method": "POST",
-      "modified": 1581938891626,
-      "name": "CreateCategories",
+      "modified": 1582123380243,
+      "name": "CreateRootCategories",
       "parameters": [
         {
           "description": "",
           "id": "pair_323de11343414904b4e6898f36331cbe",
           "name": "x_jwt_token",
-          "value": "{{ ADMIN_KEY  }}"
+          "value": "{{ ADMIN_KEY }}"
         }
       ],
       "parentId": "fld_9332693e2d4245dc8c087cae50ecfa52",
@@ -885,14 +924,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571512.25,
       "method": "POST",
-      "modified": 1581961546276,
-      "name": "CreatePlaylists",
+      "modified": 1582123386213,
+      "name": "CreateRootPlaylists",
       "parameters": [
         {
           "description": "",
           "id": "pair_666a4d254d4a475b90c9fb1e154338c2",
           "name": "x_jwt_token",
-          "value": "{{ ADMIN_KEY  }}"
+          "value": "{{ ADMIN_KEY }}"
         },
         {
           "description": "",
@@ -927,14 +966,14 @@
       "isPrivate": false,
       "metaSortKey": -1579000571510.6875,
       "method": "POST",
-      "modified": 1581968496615,
-      "name": "CreatePlaylist",
+      "modified": 1582123399173,
+      "name": "CreateRootPlaylist",
       "parameters": [
         {
           "description": "",
           "id": "pair_666a4d254d4a475b90c9fb1e154338c2",
           "name": "x_jwt_token",
-          "value": "{{ ADMIN_KEY  }}"
+          "value": "{{ ADMIN_KEY }}"
         },
         {
           "description": "",
@@ -969,8 +1008,8 @@
       "isPrivate": false,
       "metaSortKey": -1579000571509.125,
       "method": "GET",
-      "modified": 1581938866430,
-      "name": "ListAll",
+      "modified": 1582123366276,
+      "name": "GetAllIformations",
       "parameters": [
         {
           "description": "",
@@ -978,7 +1017,7 @@
           "multiline": false,
           "name": "x_jwt_token",
           "type": "text",
-          "value": "{{ ADMIN_KEY  }}"
+          "value": "{{ ADMIN_KEY }}"
         }
       ],
       "parentId": "fld_9332693e2d4245dc8c087cae50ecfa52",
@@ -992,90 +1031,295 @@
       "_type": "request"
     },
     {
+      "_id": "req_669496f4d4d14a39921ce0faba21a91b",
+      "authentication": {},
+      "body": {},
+      "created": 1581880523806,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1581880523806,
+      "method": "GET",
+      "modified": 1581961334349,
+      "name": "ListVideos",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_f9d3054e26dc4af484240d82862fc895",
+          "name": "key",
+          "value": "{{ API_KEY  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_978495866afa402ba0548e9883d03f26",
+          "name": "part",
+          "value": "id,snippet"
+        },
+        {
+          "description": "",
+          "id": "pair_bb565b67fe464d9799ad4a868e2bf161",
+          "name": "playlistId",
+          "value": "PLbOYxfav_qm7-nH3Oaeom9xkuiXVopxHL"
+        },
+        {
+          "description": "",
+          "id": "pair_ccbf59c21300477b9e9d72565e9e6416",
+          "name": "maxResults",
+          "value": "50"
+        }
+      ],
+      "parentId": "fld_6e1c5ae7ae4e464e973baa07cdf859c3",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://www.googleapis.com/youtube/v3/playlistItems",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_6e1c5ae7ae4e464e973baa07cdf859c3",
+      "created": 1581880462316,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1581725334827,
+      "modified": 1582027590214,
+      "name": "Youtube",
+      "parentId": "wrk_e43a64ce0f1e40b8a465cb7884bdb5e7",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_ec0890c8423b449c9b1abb623cc1dcd4",
+      "authentication": {},
+      "body": {},
+      "created": 1581881087223,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1581870860650.125,
+      "method": "GET",
+      "modified": 1581938911805,
+      "name": "ListSearch",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_f9d3054e26dc4af484240d82862fc895",
+          "name": "key",
+          "value": "{{ API_KEY  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_978495866afa402ba0548e9883d03f26",
+          "name": "part",
+          "value": "id,snippet"
+        },
+        {
+          "description": "",
+          "id": "pair_bb565b67fe464d9799ad4a868e2bf161",
+          "name": "q",
+          "value": "globo"
+        },
+        {
+          "description": "",
+          "id": "pair_ccbf59c21300477b9e9d72565e9e6416",
+          "name": "maxResults",
+          "value": "50"
+        },
+        {
+          "description": "",
+          "id": "pair_94912b8d585e499788b561048f31d671",
+          "name": "regionCode",
+          "value": "BR"
+        },
+        {
+          "description": "",
+          "id": "pair_5856e85016ce4615ad7cfd2be2d5ad7d",
+          "name": "type",
+          "value": "channel"
+        }
+      ],
+      "parentId": "fld_6e1c5ae7ae4e464e973baa07cdf859c3",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://www.googleapis.com/youtube/v3/search",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c9fa531e13db4da2839837e8f4b763ee",
+      "authentication": {},
+      "body": {},
+      "created": 1581880909144,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1581861197494.25,
+      "method": "GET",
+      "modified": 1581968265101,
+      "name": "ListPlaylists",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_f9d3054e26dc4af484240d82862fc895",
+          "name": "key",
+          "value": "{{ API_KEY  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_978495866afa402ba0548e9883d03f26",
+          "name": "part",
+          "value": "id,snippet"
+        },
+        {
+          "description": "",
+          "disabled": true,
+          "id": "pair_bb565b67fe464d9799ad4a868e2bf161",
+          "name": "channelId",
+          "value": "UCNZtmlHXxivqWVMfn9V9zNw"
+        },
+        {
+          "description": "",
+          "id": "pair_ccbf59c21300477b9e9d72565e9e6416",
+          "name": "maxResults",
+          "value": "50"
+        },
+        {
+          "description": "",
+          "id": "pair_8266d28ba19146b4a58965f4b6e3f416",
+          "name": "id",
+          "value": "PLhTLWUgL7Bv_3BJmJb2wDoQ1_U41FdqI-"
+        }
+      ],
+      "parentId": "fld_6e1c5ae7ae4e464e973baa07cdf859c3",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://www.googleapis.com/youtube/v3/playlists",
+      "_type": "request"
+    },
+    {
+      "_id": "req_01ee28a1480a4db982ff6e6e68547957",
+      "authentication": {},
+      "body": {},
+      "created": 1581880750567,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1581841871182.5,
+      "method": "GET",
+      "modified": 1581938931953,
+      "name": "ListCategories",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_f9d3054e26dc4af484240d82862fc895",
+          "name": "key",
+          "value": "{{ API_KEY  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_978495866afa402ba0548e9883d03f26",
+          "name": "part",
+          "value": "id,snippet"
+        },
+        {
+          "description": "",
+          "id": "pair_94912b8d585e499788b561048f31d671",
+          "name": "regionCode",
+          "value": "BR"
+        },
+        {
+          "description": "",
+          "id": "pair_3ff9ba28245c40f1ad681f721985afcf",
+          "name": "hl",
+          "value": "pt_BR"
+        }
+      ],
+      "parentId": "fld_6e1c5ae7ae4e464e973baa07cdf859c3",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://www.googleapis.com/youtube/v3/videoCategories",
+      "_type": "request"
+    },
+    {
       "_id": "env_134670f8645847058f1484858dec675e",
       "color": null,
       "created": 1581813641167,
-      "data": {},
-      "dataPropertyOrder": {},
-      "isPrivate": false,
-      "metaSortKey": 1578946614519,
-      "modified": 1581813641167,
-      "name": "Base Environment",
-      "parentId": "wrk_e43a64ce0f1e40b8a465cb7884bdb5e7",
-      "_type": "environment"
-    },
-    {
-      "_id": "jar_446c3fac9aba4c1fa37272574e54a92b",
-      "cookies": [
-        {
-          "creation": "2020-02-05T23:36:17.225Z",
-          "domain": "climatempo.com.br",
-          "expires": "2020-03-06T23:36:16.000Z",
-          "extensions": [
-            "SameSite=Lax"
-          ],
-          "hostOnly": false,
-          "httpOnly": true,
-          "id": "9095038686200452",
-          "key": "__cfduid",
-          "lastAccessed": "2020-02-05T23:36:17.225Z",
-          "path": "/",
-          "value": "df35f2a2cd701afcc81a8dc261e806ce11580945776"
-        }
-      ],
-      "created": 1581813641207,
-      "modified": 1581813641207,
-      "name": "Default Jar",
-      "parentId": "wrk_e43a64ce0f1e40b8a465cb7884bdb5e7",
-      "_type": "cookie_jar"
-    },
-    {
-      "_id": "env_fcc713e89849477b98acab13c722e3b7",
-      "color": "#7d69cb",
-      "created": 1581813641184,
       "data": {
         "ADMIN_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTU4MTk0MDczMn0.inydhWD-CVX99GmhAZXX8JjhBdwFBtRm8F5PsrUbg8E",
         "API_KEY": "AIzaSyDsMonEMfEo1bJbYyFW_sR6t-RpGiYXQxo",
-        "API_URL": "http://localhost:3333",
         "USER_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwiaWF0IjoxNTgxOTg1ODcwLCJleHAiOjE1ODE5OTMwNzB9.LJ4bNHz2m7__pR-mWXzPv9ozv8wZ1bJ7HIgR4gnJUhg"
       },
       "dataPropertyOrder": {
         "&": [
-          "API_URL",
           "API_KEY",
           "ADMIN_KEY",
           "USER_KEY"
         ]
       },
       "isPrivate": false,
-      "metaSortKey": 1579007555166,
-      "modified": 1581991088013,
-      "name": "Development",
-      "parentId": "env_134670f8645847058f1484858dec675e",
+      "metaSortKey": 1578946614519,
+      "modified": 1582113434220,
+      "name": "root",
+      "parentId": "wrk_e43a64ce0f1e40b8a465cb7884bdb5e7",
       "_type": "environment"
+    },
+    {
+      "_id": "jar_446c3fac9aba4c1fa37272574e54a92b",
+      "cookies": [],
+      "created": 1581813641207,
+      "modified": 1582113503500,
+      "name": "Default Jar",
+      "parentId": "wrk_e43a64ce0f1e40b8a465cb7884bdb5e7",
+      "_type": "cookie_jar"
     },
     {
       "_id": "env_5da3dbf32ab64021b5ccdd8ba547717a",
       "color": "#0000ff",
       "created": 1581991088085,
       "data": {
-        "ADMIN_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTU4MTk0MDczMn0.inydhWD-CVX99GmhAZXX8JjhBdwFBtRm8F5PsrUbg8E",
-        "API_KEY": "AIzaSyDsMonEMfEo1bJbYyFW_sR6t-RpGiYXQxo",
-        "API_URL": "https://api-globoplay.herokuapp.com",
-        "USER_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwiaWF0IjoxNTgxOTg1ODcwLCJleHAiOjE1ODE5OTMwNzB9.LJ4bNHz2m7__pR-mWXzPv9ozv8wZ1bJ7HIgR4gnJUhg"
+        "API_URL": "https://api-globoplay.herokuapp.com"
       },
       "dataPropertyOrder": {
         "&": [
-          "API_URL",
-          "API_KEY",
-          "ADMIN_KEY",
-          "USER_KEY"
+          "API_URL"
         ]
       },
       "isPrivate": false,
-      "metaSortKey": 1580063537113.5,
-      "modified": 1581992420836,
+      "metaSortKey": 0,
+      "modified": 1582122802000,
       "name": "Production",
+      "parentId": "env_134670f8645847058f1484858dec675e",
+      "_type": "environment"
+    },
+    {
+      "_id": "env_fcc713e89849477b98acab13c722e3b7",
+      "color": "#7d69cb",
+      "created": 1581813641184,
+      "data": {
+        "API_URL": "http://localhost:3333"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "API_URL"
+        ]
+      },
+      "isPrivate": false,
+      "metaSortKey": 1,
+      "modified": 1582122802016,
+      "name": "Development",
       "parentId": "env_134670f8645847058f1484858dec675e",
       "_type": "environment"
     }

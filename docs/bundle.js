@@ -6828,7 +6828,7 @@ var app = (function() {
         this.req.parameters.forEach(t => {
           e.push({ name: t.name, value: t.value, description: t.description });
         }),
-        { title: "Query Parameters", rows: e }
+        { title: "Parameters", rows: e }
       );
     }
     headers() {
